@@ -1,0 +1,8 @@
+.bold {
+    font-weight: bold;
+}
+
+.salutation_div p {
+    margin-top: -5px;
+    text-align: center;
+}

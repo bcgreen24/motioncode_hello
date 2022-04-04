@@ -1,0 +1,5 @@
+services:
+  hello.salutation:
+    class: Drupal\hello\Services\HelloSalutation
+    arguments: ['@config.factory']
+    

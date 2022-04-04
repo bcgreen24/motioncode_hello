@@ -1,0 +1,40 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implement hook_help().
+ */
+
+function hello_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        case 'help.page.hello':
+            $output = '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('This is an example module.') . '</p>';
+            return $output;
+        default:
+    }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function hello_theme($existing, $type, $theme, $path)
+{
+    return [
+        'hello_salutation' => [
+            'variables' => ['salutation' => NULL, 'target' => NULL, 'overridden' => FALSE ],
+        ],
+    ];
+}
+
+ /**
+  * Default preprocessor function for the hello_salutation theme hook.
+  */
+
+// function template_preprocess_hello_salutation(&$variables) {
+//   $variables['attributes'] = [
+//     'class' => ['salutation'],
+//   ];
+// }
